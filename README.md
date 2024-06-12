@@ -1,0 +1,12 @@
+**How to set up the website for production**
+- Clone the git repo
+- In your terminal, run `cd nellydrell`
+- In your terminal, run `composer install`
+- You can base your .env file on the provided example using: `cp .env.example .env`
+- In your terminal, run `php artisan migrate`
+- You also need to generate your app key using: `php artisan key:generate`
+- And link your storage folder using: `php artisan storage:link`
+- In your terminal, run `php artisan admin:create` and follow the on-screen instructions to create an admin account.
+- Start the development server with: `php artisan serve`
+- Next, follow the instructions in the Official Deployment Documentation `https://laravel.com/docs/9.x/deployment` to ensure you are following the best practices.
+- Next login with the admin account at: `http://localhost:8000/login`
