@@ -3,7 +3,7 @@
     {{-- Select a tag --}}
     <div class="flex">
         <select id="tagInput" name="tagInput" wire:model="tagInput" class="rounded-lg w-full sm:w-fit mt-1 mr-3 form-select">
-            <option value="">Vali kategooria</option>
+            <option value="">{{__('messages.choseg')}}</option>
             @foreach($categories as $category)
                 <option value="{{ $category->id }}">{{ $category->name }}</option>
             @endforeach
@@ -17,7 +17,7 @@
 
     @if($tags)
     <div class="mt-2">
-        <label for="tags" class="dark:text-white">Lisatud kategooriad:</label>
+        <label for="tags" class="dark:text-white">{{__('messages.addedg')}}</label>
         <ul class="flex -mx-1">
             <!-- Thanks to https://a11y-guidelines.orange.com/en/web/components-examples/tags/ for the help in making this component accessible -->
             @foreach ($tagsArray as $tag)

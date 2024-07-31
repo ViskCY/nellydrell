@@ -27,4 +27,11 @@ return [
     'roles' => 'Rollid',
     'banned' => 'Keelatud',
     'user' => 'Kasutaja',
+
+    'nopicsfilters' => 'Ühtegi pilti ei leitud! Proovige oma filtrid lähtestada.',
+    'nopics' => 'Ühtegi pilti ei leitud!',
+    'emptyf' => 'Tühjenda filtrid',
+    'refresh' => 'Värskenda',
+    'choseg' => 'Vali kategooria',
+    'addedg' => 'Lisatud kategooriad:',
 ];

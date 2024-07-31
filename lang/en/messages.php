@@ -27,4 +27,10 @@ return [
     'roles' => 'Roles',
     'banned' => 'Banned',
     'user' => 'User',
+    'nopicsfilters' => 'No images found! Try resetting your filters.',
+    'nopics' => 'No images found!',
+    'emptyf' => 'Reset filters',
+    'refresh' => 'Refresh',
+    'choseg' => 'Choose a category',
+    'addedg' => 'Added categories:',
 ];
