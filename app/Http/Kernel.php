@@ -39,6 +39,7 @@ class Kernel extends HttpKernel
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
             \App\Http\Middleware\EnsureUserIsNotBanned::class,
             'switchlocale',
+            \App\Http\Middleware\DomainLocale::class,
         ],
 
         'api' => [
