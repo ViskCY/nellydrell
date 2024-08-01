@@ -45,8 +45,11 @@
                         <a href="{{ route('cv') }}" class="block px-4 py-2 text-sm text-white hover:bg-gray-700">{{__('messages.cv')}}</a>
                         <a href="{{ route('contacts') }}" class="block px-4 py-2 text-sm text-white hover:bg-gray-700">{{__('messages.contacts')}}</a>
                         <hr>
-
-
+                        @if (app()->getLocale() === 'et')
+                            <a href="https://nellydrell.com" class="block px-4 py-2 text-sm text-white hover:bg-gray-700">{{ __('English') }}</a>
+                        @else
+                            <a href="https://nellydrell.ee" class="block px-4 py-2 text-sm text-white hover:bg-gray-700">{{ __('Eesti keel') }}</a>
+                        @endif
                         @can('access-dashboards')
                             <hr>
                             <a href="{{ route('dashboard') }}" class="block px-4 py-2 text-sm text-white hover:bg-gray-700">{{__('messages.dashboard')}}</a>
