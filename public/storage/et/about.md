@@ -1,3 +1,5 @@
+# Kunstnik **Nelly Drell** Tutvustus
+
 Nelly Drell (sündinud 19. oktoobril 1979 Tallinnas on eesti maalikunstnik.
 
 Juba lapsena huvitas teda väga kunst ja Pelgulinna Keskkooli kunstiklassis õppimisega samaaegselt käis ta ennast täiendamas huvikeskuses Kullo (keraamika) ja Kevade tänava kunstikoolis. Kunstile pühendumisest ja kunstiarmastusest sai peagi veendumus, et valitud tee on õige ning kasvas soov enese arendamist jätkata ja päris kunstnikuks saada. Aastatel 1998–2000 õppis ta Eesti Kunstiakadeemias maali erialal, hiljem Miami Rahvusvahelises Kunstikolledžis (2000–2001) ning New Yorgi Kunstiakadeemias (2001–2003).

@@ -1,3 +1,5 @@
+# About artist **Nelly Drell**
+
 Nelly Drell (born on October 19, 1979 in Tallinn) is an Estonian painter.
 
 Already as a child, he was very interested in art, and at the same time as studying in the art class of Pelgulinna Middle School, he went to the Kullo interest center (ceramics) and Kevade street art school to improve himself. Dedication to art and love of art soon became a conviction that the chosen path was the right one, and the desire to continue self-development and become a real artist grew. In 1998–2000, he studied painting at the Estonian Academy of Arts, later at Miami International College of Art (2000–2001) and at the New York Academy of Arts (2001–2003).
