@@ -9,10 +9,10 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $categories = Category::all()->map(function($category) {
+        $categories = Category::all()->map(function ($category) {
             // Get a random post image for the category
             $randomPost = Post::whereJsonContains('tags', $category->id)->inRandomOrder()->first();
-            $category->background_image = $randomPost ? $randomPost->image_url : 'default-image.jpg'; // default image if no post found
+            $category->background_image = $randomPost ? $randomPost->featured_image : asset('storage/default.jpg'); // default image if no post found
             return $category;
         });
 
