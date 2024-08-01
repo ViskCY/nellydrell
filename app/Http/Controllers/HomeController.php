@@ -2,7 +2,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
-use App\Models\Post;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -10,9 +10,13 @@ class HomeController extends Controller
     public function index()
     {
         $categories = Category::all()->map(function ($category) {
-            // Get a random post image for the category
-            $randomPost = Post::whereJsonContains('tags', $category->id)->inRandomOrder()->first();
-            $category->background_image = $randomPost ? $randomPost->featured_image : asset('storage/default.jpg'); // default image if no post found
+            // Get a random post image for the category using a raw query
+            $randomPostImage = DB::table('posts')
+                ->whereJsonContains('tags', $category->id)
+                ->inRandomOrder()
+                ->value('featured_image');
+                
+            $category->background_image = $randomPostImage ?: asset('storage/default.jpg'); // default image if no post found
             return $category;
         });
 
