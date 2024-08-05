@@ -2,7 +2,7 @@
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-4 lg:px-8">
         <div class="flex justify-between h-16">
-            <div class="flex">
+            <div class="flex mr-2">
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
                     <x-nav-link :href="route('home')" class="font-bold text-gray-700 dark:text-gray-200 ml-3 border-none">
