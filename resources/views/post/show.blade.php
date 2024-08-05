@@ -42,7 +42,7 @@
 									@else
 									<h1 class="text-3xl font-bold">
 										<span class="opacity-75" title="This post has not yet been published">
-											Mustand: 
+											{{__('messages.draft')}}: 
 										</span>
 										<i>{{ $post->title }}</i>
 									</h1>
@@ -61,7 +61,7 @@
 						<ul class="text-sm flex flex-row flex-wrap -mx-1 mt-1 mb-2">
 							<li class="mx-1" name="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
 								<span class="opacity-75">
-									Autor: 
+									{{__('messages.author')}}:
 								</span>
 								<x-link :href="route('posts.index', ['author' => $post->author])" rel="author" itemprop="url">
 									<span itemprop="name">
@@ -77,7 +77,7 @@
 							@if(config('blog.withTags') && $post->tags)
 							<li class="mx-1" name="tags">
 								<span class="opacity-75">
-									Katekooriad:
+									{{__('messages.categories')}}:
 								</span>
 								<x-post-tags :tags="$post->tags" class="inline-flex" itemprop="keywords" :commaseparated="true"/>
 							</li>
@@ -99,9 +99,9 @@
 
 			<div class="text-center dark:text-white mt-8 sm:hidden">
 				@can('update', $post)
-				<a href="{{ route('posts.edit', $post) }}" class="my-2 mr-2 opacity-75 hover:opacity-100 transition-opacity">Halda pilti</a>
+				<a href="{{ route('posts.edit', $post) }}" class="my-2 mr-2 opacity-75 hover:opacity-100 transition-opacity">{{__('messages.mngpic')}}</a>
 				@endcan
-				<a href="/" class="opacity-75 hover:opacity-100 transition-opacity">Tagasi</a>
+				<a href="/" class="opacity-75 hover:opacity-100 transition-opacity">{{__('messages.back')}}</a>
 			</div>
 
         </div>
