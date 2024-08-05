@@ -6,7 +6,7 @@
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
                     <x-nav-link :href="route('home')" class="font-bold text-gray-700 dark:text-gray-200 ml-3 border-none">
-                        <img class="mx-auto dark:text-white h-16" src="{{ asset('storage/logo.png') }}" alt="Alt">
+                        <img class="mx-auto dark:text-white h-16 sm:h-8" src="{{ asset('storage/logo.png') }}" alt="Alt">
                     </x-nav-link>
                 </div>
             </div>
