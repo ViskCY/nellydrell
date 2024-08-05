@@ -3,12 +3,13 @@
 namespace App\View\Components;
 
 use Illuminate\View\Component;
-use App\Models\Category; // Import the Category model
+use App\Models\Category;
+use Illuminate\Support\Facades\App; // Import the App facade for locale
 
 class PostTags extends Component
 {
     /**
-     * @var array $tags do display
+     * @var array $tags to display
      */
     public array $tags;
 
@@ -24,12 +25,19 @@ class PostTags extends Component
      */
     public function __construct(array $tags = []) {
         $this->tags = $tags;
+        $locale = App::getLocale(); // Get the current locale
 
         // Match tags with category id to get the category name
         foreach ($this->tags as $tag) {
             $category = Category::find($tag);
             if ($category) {
-                $this->tagCategories[] = ['tag' => $tag, 'categoryName' => $category->name];
+                // Determine which name to use based on locale
+                $categoryName = ($locale === 'en') ? $category->name_en : $category->name;
+                
+                $this->tagCategories[] = [
+                    'tag' => $tag,
+                    'categoryName' => $categoryName
+                ];
             }
         }
     }
