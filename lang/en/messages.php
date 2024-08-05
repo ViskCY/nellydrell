@@ -38,4 +38,5 @@ return [
     'draft' => 'Draft',
     'mngpic' => 'Manage image',
     'back' => 'Back',
+    'more' => 'Look closer',
 ];
