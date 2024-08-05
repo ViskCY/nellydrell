@@ -1,6 +1,6 @@
 <nav x-data="{ open: false }" class="border-b border-gray-100 dark:border-gray-900" style="background-color: #000000;">
     <!-- Primary Navigation Menu -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-4 lg:px-8">
         <div class="flex justify-between h-16">
             <div class="flex">
                 <!-- Logo -->
@@ -10,7 +10,7 @@
                     </x-nav-link>
                 </div>
             </div>
-            <div class="flex items-center space-x-8">
+            <div class="flex items-center space-x-6">
 
             <form action="{{ route('posts.index', ['query' => request()->query('query')]) }}" method="GET">
                 <div class="relative mx-auto text-white w-full max-w-40 sm:max-w-40 md:max-w-lg lg:max-w-xl">
@@ -29,7 +29,7 @@
             </form>
 
 
-                <div x-data="{ isOpen: false }" class="relative">
+                <div x-data="{ isOpen: false }" class="relative ml-2">
                     <!-- Hamburger button -->
                     <button @click="isOpen = !isOpen" class="p-2 focus:outline-none md:hidden text-white">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
