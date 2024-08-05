@@ -6,16 +6,16 @@
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
                     <x-nav-link :href="route('home')" class="font-bold text-gray-700 dark:text-gray-200 ml-3 border-none">
-                        <img class="mx-auto dark:text-white h-16 sm:h-8" src="{{ asset('storage/logo.png') }}" alt="Alt">
+                        <img class="mx-auto dark:text-white h-10 sm:h-8 lg:h-16" src="{{ asset('storage/logo.png') }}" alt="Alt">
                     </x-nav-link>
                 </div>
             </div>
             <div class="flex items-center space-x-8">
 
             <form action="{{ route('posts.index', ['query' => request()->query('query')]) }}" method="GET">
-                <div class="relative mx-auto text-white">
-                    <input class="h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none" style="background-color: #374151;"
-                        type="search" name="query" placeholder="{{__('messages.search')}}">
+                <div class="relative mx-auto text-white w-full max-w-xs sm:max-w-md md:max-w-lg lg:max-w-xl">
+                    <input class="h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none w-full" style="background-color: #374151;"
+                        type="search" name="query" placeholder="{{ __('messages.search') }}">
                     <button type="submit" class="absolute right-0 top-0 mt-3 mr-3">
                         <svg class="text-white h-4 w-4 fill-current" xmlns="http://www.w3.org/2000/svg"
                             xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px"
@@ -27,6 +27,7 @@
                     </button>
                 </div>
             </form>
+
 
                 <div x-data="{ isOpen: false }" class="relative">
                     <!-- Hamburger button -->
