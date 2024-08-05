@@ -13,7 +13,7 @@
             <div class="flex items-center space-x-8">
 
             <form action="{{ route('posts.index', ['query' => request()->query('query')]) }}" method="GET">
-                <div class="relative mx-auto text-white w-full max-w-60 sm:max-w-60 md:max-w-lg lg:max-w-xl">
+                <div class="relative mx-auto text-white w-full max-w-40 sm:max-w-40 md:max-w-lg lg:max-w-xl">
                     <input class="h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none w-full" style="background-color: #374151;"
                         type="search" name="query" placeholder="{{ __('messages.search') }}">
                     <button type="submit" class="absolute right-0 top-0 mt-3 mr-3">
