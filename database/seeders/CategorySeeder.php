@@ -16,21 +16,18 @@ class CategorySeeder extends Seeder
     public function run()
     {
         $categories = [
-            ['id' => 1, 'name' => 'Portreed', 'description' => 'saddsadasda', 'background_image' => NULL],
-            ['id' => 2, 'name' => 'Figuraalmaalid', 'description' => 'asdasdasfdsaasfds', 'background_image' => NULL],
-            ['id' => 3, 'name' => 'Loodusmaalid', 'description' => 'saasdfsdfsdfsdfsdffsd', 'background_image' => NULL],
-            ['id' => 4, 'name' => 'Linna vaated', 'description' => 'sdafsdfggfdgdfgdfgd', 'background_image' => NULL],
-            ['id' => 5, 'name' => 'Abstraktmaalid', 'description' => 'sadfgdssdgvcgfhhdfgghfhgf', 'background_image' => NULL],
+            ['id' => 1, 'name' => 'Portreed', 'name_en' => 'Portraits'],
+            ['id' => 2, 'name' => 'Figuraalmaalid', 'name_en' => 'Figural paintings'],
+            ['id' => 3, 'name' => 'Loodusmaalid', 'name_en' => 'Nature paintings'],
+            ['id' => 4, 'name' => 'Linna vaated', 'name_en' => 'City views'],
+            ['id' => 5, 'name' => 'Abstrakt maalid', 'name_en' => 'Abstract paintings'],
         ];
 
         foreach ($categories as $category) {
             DB::table('categories')->insert([
                 'id' => $category['id'],
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now(),
                 'name' => $category['name'],
-                'description' => $category['description'],
-                'background_image' => $category['background_image'],
+                'name_en' => $category['name_en'],
             ]);
         }
     }
