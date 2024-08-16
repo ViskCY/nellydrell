@@ -1,3 +1,3 @@
-# Kunstnik **Nelly Drelli** Kontakt
+# Kontakt
 
-### **Email:** nelly@nellydrell.ee
+## nelly@nellydrell.ee

@@ -1,3 +1,3 @@
-# Artist **Nelly Drell** Contact
+# Contact
 
-## **Email:** nelly@nellydrell.ee
+## nelly@nellydrell.ee
