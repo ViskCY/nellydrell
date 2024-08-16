@@ -34,8 +34,8 @@ return [
     'choseg' => 'Vali kategooria',
     'addedg' => 'Lisatud kategooriad:',
     'categories' => 'Kategooriad',
-    'pics' => 'Pildid',
     'draft' => 'Mustand',
     'mngpic' => 'Halda pilti',
     'back' => 'Tagasi',
+    'more' => 'Vaata lähemalt',
 ];

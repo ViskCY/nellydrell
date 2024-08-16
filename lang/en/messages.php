@@ -34,7 +34,6 @@ return [
     'choseg' => 'Choose a category',
     'addedg' => 'Added categories:',
     'categories' => 'Categories',
-    'pics' => 'Pictures',
     'draft' => 'Draft',
     'mngpic' => 'Manage image',
     'back' => 'Back',
