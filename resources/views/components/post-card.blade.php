@@ -1,4 +1,4 @@
-<article class="w-full sm:w-80 bg-white rounded-lg shadow-md dark:bg-gray-800 m-4 my-5 flex flex-col flex-grow">
+<article class="w-full sm:w-80 bg-white rounded-lg shadow-md dark:bg-black m-4 my-3 flex flex-col flex-grow">
     <header>
         <a href="{{ route('posts.show', $post) }}">
             <span class="rounded-t-lg featured-post-image" role="img" style="background-image: url('{{ $post->featured_image }}');" alt="Featured Image"></span>
@@ -31,7 +31,7 @@
             @endif
         </p> -->
 
-        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400 overflow-hidden text-ellipsis">
+        <p class="font-normal text-gray-700 dark:text-gray-400 overflow-hidden text-ellipsis">
             {{ $post->description }}
         </p>
 
