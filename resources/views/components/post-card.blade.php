@@ -4,7 +4,7 @@
             <span class="rounded-t-lg featured-post-image" role="img" style="background-image: url('{{ $post->featured_image }}');" alt="Featured Image"></span>
         </a>
     </header>
-    <div class="p-5 h-full flex flex-col">
+    <div class="p-5 flex flex-col">
 
         @if(config('blog.withTags') && config('blog.showTagsOnPostCard') && $post->tags)
             <x-post-tags :tags="$post->tags" class="text-xs" />
