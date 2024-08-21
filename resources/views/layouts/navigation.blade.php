@@ -59,9 +59,9 @@
                         <a href="{{ route('contacts') }}" class="block px-4 py-2 text-sm text-white hover:bg-gray-700">{{__('messages.contacts')}}</a>
                         <hr>
                         @if (app()->getLocale() === 'et')
-                            <a href="nellydrell.com" class="block px-4 py-2 text-sm text-white hover:bg-gray-700">{{ __('English') }}</a>
+                            <a href="http://nellydrell.com" class="block px-4 py-2 text-sm text-white hover:bg-gray-700">{{ __('English') }}</a>
                         @else
-                            <a href="nellydrell.ee" class="block px-4 py-2 text-sm text-white hover:bg-gray-700">{{ __('Eesti keel') }}</a>
+                            <a href="http://nellydrell.ee" class="block px-4 py-2 text-sm text-white hover:bg-gray-700">{{ __('Eesti keel') }}</a>
                         @endif
                         @can('access-dashboards')
                             <hr>
