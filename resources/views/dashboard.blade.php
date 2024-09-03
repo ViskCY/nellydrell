@@ -296,7 +296,6 @@
                     <form method="POST" action="{{ route('dashboard.update', $key) }}">
                         @csrf
                         <div class="mt-3">
-                            <x-label for="{{ $key }}" :value="$label" />
                             <textarea id="{{ $key }}" name="content" class="markdown-editor block mt-1 w-full" placeholder="Enter your content here" rows="10">{{ old('content', $content[$key] ?? '') }}</textarea>
                             @error('content') <span class="text-red-500">{{ $message }}</span> @enderror
                         </div>
@@ -307,7 +306,7 @@
                 </div>
             </section>
             @endforeach
-            
+
             @push('scripts')
             <script>
                 document.addEventListener('DOMContentLoaded', () => {
