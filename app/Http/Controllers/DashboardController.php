@@ -48,14 +48,23 @@ class DashboardController extends Controller
     {
         // Validate the request
         $request->validate([
-            'content' => 'required',
+            'content' => 'required|string',
         ]);
-
-        // Save the content to the file
-        File::put($this->filePath, $request->input('content'));
-
+    
+        // Define the path
+        $filePath = public_path('storage/en/about.md');
+    
+        // Ensure the directory exists
+        if (!is_dir(dirname($filePath))) {
+            mkdir(dirname($filePath), 0755, true);
+        }
+    
+        // Update the content of the file
+        file_put_contents($filePath, $request->input('content'));
+    
         // Redirect back with a success message
-        return redirect()->route('dashboard')->with('success', 'File updated successfully!');
+        return redirect()->route('dashboard')->with('success', 'Markdown file updated successfully.');
     }
+    
 }
 
