@@ -4,12 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use App\Models\User;
-use App\Models\Comment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
+use Illuminate\Support\Facades\File;
 
 class DashboardController extends Controller
 {
+    protected $filePath = 'public/storage/en/about.md';
 
     /**
      * Display the view.
@@ -24,22 +25,37 @@ class DashboardController extends Controller
             abort(403);
         }
         
-        // If the user is an admin they can manage all posts and users
+        // Load posts and users based on the user's role
         if ($request->user()->is_admin) {
             $posts = Post::all();
-
             $users = User::all();
-        }
-
-        // Otherwise if the user is an author we show their posts
-        elseif ($request->user()->is_author) {
+        } elseif ($request->user()->is_author) {
             $posts = $request->user()->posts;
         }
+
+        // Load the content of the markdown file
+        $content = File::exists($this->filePath) ? File::get($this->filePath) : '';
 
         // Return the view with the data we prepared
         return view('dashboard', [
             'posts' => $posts ?? false,
             'users' => $users ?? false,
+            'content' => $content,
         ]);
     }
+
+    public function updateMarkdown(Request $request)
+    {
+        // Validate the request
+        $request->validate([
+            'content' => 'required',
+        ]);
+
+        // Save the content to the file
+        File::put($this->filePath, $request->input('content'));
+
+        // Redirect back with a success message
+        return redirect()->route('dashboard')->with('success', 'File updated successfully!');
+    }
 }
+

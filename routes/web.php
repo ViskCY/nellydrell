@@ -35,7 +35,12 @@ Route::resource('posts', PostController::class);
 Route::post('/posts/{post}/publish', [PostController::class, 'publish'])->name('posts.publish');
 Route::post('/posts/{post}/unpublish', [PostController::class, 'unpublish'])->name('posts.unpublish');
 
+// Route for displaying the dashboard
 Route::get('/dashboard', [DashboardController::class, 'show'])->middleware(['auth', 'can:access-dashboards'])->name('dashboard');
+
+// Route for updating the markdown content in the dashboard
+Route::post('/dashboard/update-md', [DashboardController::class, 'updateMarkdown'])->middleware(['auth', 'can:access-dashboards'])->name('dashboard.update-md');
+
 Route::get('/contacts', [ContactsController::class, 'index'])->name('contacts');
 Route::get('/cv', [CVController::class, 'index'])->name('cv');
 Route::get('/about', [AboutController::class, 'index'])->name('about');

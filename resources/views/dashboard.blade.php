@@ -283,6 +283,25 @@
                 
             </section>
 
+            <!-- Markdown Editor Section -->
+            <section class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg mb-5">
+                <div class="p-6 bg-white dark:bg-gray-800">
+                    <header class="flex flex-row justify-between items-center">
+                        <h3 class="text-xl font-bold mb-5">Edit About.md</h3>
+                    </header>
+
+                    <form action="{{ route('dashboard.update-md') }}" method="POST">
+                        @csrf
+                        <textarea name="content" rows="20" class="w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">{{ old('content', $content) }}</textarea>
+                        <div class="mt-4">
+                            <button type="submit" class="inline-flex items-center px-4 py-2 bg-gray-800 dark:bg-gray-100 border border-transparent rounded-md font-semibold text-xs text-white dark:text-black uppercase tracking-widest hover:bg-gray-700 dark:hover:bg-gray-300 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:ring ring-gray-300 disabled:opacity-25 transition ease-in-out duration-150">
+                                Save
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+
             @push('scripts')
             <livewire:edit-user-form-modal />
 
