@@ -283,24 +283,28 @@
                 
             </section>
 
-            <!-- Markdown Editor Section -->
+            <!-- Loop through all the content to create editors for each file -->
+            @foreach (['en_about', 'en_contacts', 'en_cv', 'et_about', 'et_contacts', 'et_cv'] as $key)
             <section class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg mb-5">
                 <div class="p-6 bg-white dark:bg-gray-800">
-                    <header class="flex flex-row justify-between items-center">
-                        <h3 class="text-xl font-bold mb-5">Edit About.md</h3>
+                    <header class="mb-4">
+                        <h3 class="text-xl font-bold">
+                            {{ ucfirst(str_replace('_', ' ', $key)) }}
+                        </h3>
                     </header>
 
-                    <form action="{{ route('dashboard.update-md') }}" method="POST">
+                    <form method="POST" action="{{ route('dashboard.update', $key) }}">
                         @csrf
-                        <textarea name="content" rows="20" class="w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">{{ old('content', $content) }}</textarea>
-                        <div class="mt-4">
-                            <button type="submit" class="inline-flex items-center px-4 py-2 bg-gray-800 dark:bg-gray-100 border border-transparent rounded-md font-semibold text-xs text-white dark:text-black uppercase tracking-widest hover:bg-gray-700 dark:hover:bg-gray-300 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:ring ring-gray-300 disabled:opacity-25 transition ease-in-out duration-150">
-                                Save
-                            </button>
+                        <div class="mb-4">
+                            <textarea name="content" rows="10" class="text-black w-full rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">{{ old('content', $content[$key]) }}</textarea>
                         </div>
+                        <button type="submit" class="inline-flex items-center px-4 py-2 bg-gray-800 dark:bg-gray-100 border border-transparent rounded-md font-semibold text-xs text-white dark:text-black uppercase tracking-widest hover:bg-gray-700 dark:hover:bg-gray-300 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:ring ring-gray-300 disabled:opacity-25 transition ease-in-out duration-150">
+                            Update
+                        </button>
                     </form>
                 </div>
             </section>
+            @endforeach
 
             @push('scripts')
             <livewire:edit-user-form-modal />

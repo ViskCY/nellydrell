@@ -39,7 +39,7 @@ Route::post('/posts/{post}/unpublish', [PostController::class, 'unpublish'])->na
 Route::get('/dashboard', [DashboardController::class, 'show'])->middleware(['auth', 'can:access-dashboards'])->name('dashboard');
 
 // Route for updating the markdown content in the dashboard
-Route::post('/dashboard/update-md', [DashboardController::class, 'updateMarkdown'])->middleware(['auth', 'can:access-dashboards'])->name('dashboard.update-md');
+Route::post('/dashboard/update/{fileKey}', [DashboardController::class, 'updateMarkdown'])->middleware(['auth', 'can:access-dashboards'])->name('dashboard.update');
 
 Route::get('/contacts', [ContactsController::class, 'index'])->name('contacts');
 Route::get('/cv', [CVController::class, 'index'])->name('cv');
