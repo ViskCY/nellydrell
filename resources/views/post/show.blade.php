@@ -59,21 +59,6 @@
 					<p class="text-lg" itemprop="description">{{ $post->description }}</p>
 					<div aria-label="About the post" role="doc-introduction">
 						<ul class="text-sm flex flex-row flex-wrap -mx-1 mt-1 mb-2">
-							<li class="mx-1" name="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
-								<span class="opacity-75">
-									{{__('messages.author')}}:
-								</span>
-								<x-link :href="route('posts.index', ['author' => $post->author])" rel="author" itemprop="url">
-									<span itemprop="name">
-										{{ $post->author->name }}
-									</span>
-								</x-link>
-							</li>
-							@if($post->isPublished())
-							<li class="mx-1 opacity-75" name="published_time">
-								<time datetime="{{ $post->published_at }}" itemprop="datePublished">{{ $post->published_at->format('Y-m-d') }}</time>.
-							</li>
-							@endif
 							@if(config('blog.withTags') && $post->tags)
 							<li class="mx-1" name="tags">
 								<span class="opacity-75">
