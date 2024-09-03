@@ -307,6 +307,17 @@
                 </div>
             </section>
             @endforeach
+            
+            @push('scripts')
+            <script>
+                document.addEventListener('DOMContentLoaded', () => {
+                    const editors = document.querySelectorAll('.markdown-editor');
+                    editors.forEach((editor) => {
+                        new EasyMDE({ element: editor });
+                    });
+                });
+            </script>
+            @endpush
 
             @push('scripts')
             <livewire:edit-user-form-modal />

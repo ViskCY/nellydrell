@@ -38,6 +38,11 @@
                 document.documentElement.classList.remove('dark')
             }
         </script>
+        
+        <!-- EasyMDE CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/easymde@latest/dist/easymde.min.css">
+        @stack('styles')
+
     </head>
     <body class="font-sans antialiased">
         <div class="min-h-screen flex flex-col" style="background-color: #2B1608;">
@@ -50,6 +55,9 @@
         </div>
 
         <livewire:scripts />
+        
+        <!-- EasyMDE JavaScript -->
+        <script src="https://cdn.jsdelivr.net/npm/easymde@latest/dist/easymde.min.js"></script>
 
         @stack('scripts')
 
