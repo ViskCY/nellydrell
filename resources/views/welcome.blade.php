@@ -3,7 +3,7 @@
         <section class="max-w-7xl mx-auto sm:px-6 lg:px-8 w-full">
             <div class="flex flex-col flex-wrap justify-start">
                 @foreach($categories as $category)
-                    <article class="bg-white rounded-lg shadow-md dark:bg-black dark:hover:bg-gray-700 m-4 my-5 text-center">
+                    <article class="bg-white rounded-lg shadow-md dark:bg-gray-800 dark:hover:bg-gray-700 m-4 my-5 text-center">
                         <a href="{{ route('posts.index', ['category' => $category->id]) }}">
                             <div class="relative">
                                 <span class="rounded-t-lg featured-post-image" role="img" style="background-image: url('{{ $category->background_image }}'); filter: blur(4px); -webkit-filter: blur(4px);" alt="{{ $category->name }}"></span>

@@ -29,7 +29,7 @@
 	
     <div class="relative flex items-top justify-center sm:items-center py-4 sm:pt-0">
         <div class="max-w-5xl w-full mx-auto sm:px-6 lg:px-8 my-8 md:my-16">
-            <article itemscope itemtype="http://schema.org/Article" class="bg-white rounded-lg shadow-md dark:bg-black py-4 px-6 dark:text-white">
+            <article itemscope itemtype="http://schema.org/Article" class="bg-white rounded-lg shadow-md dark:bg-gray-800 py-4 px-6 dark:text-white">
 				<meta itemprop="identifier" content="{{ $post->slug }}">
 				<meta itemprop="url" content="{{ route('posts.show', $post) }}">
 				<header role="doc-pageheader" class="mb-5">
