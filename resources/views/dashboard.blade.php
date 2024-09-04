@@ -312,9 +312,7 @@
                 document.addEventListener('DOMContentLoaded', () => {
                     const editors = document.querySelectorAll('.markdown-editor');
                     editors.forEach((editor) => {
-                        new EasyMDE({ 
-                            element: editor,
-                            
+                        new EasyMDE({
                             {!! config('blog.easyMDE.toolbar')
                                 ? "showIcons: ". json_encode(config('blog.easyMDE.toolbars')[config('blog.easyMDE.toolbar')])
                                 : null
