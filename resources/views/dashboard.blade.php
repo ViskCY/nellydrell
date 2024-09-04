@@ -320,20 +320,6 @@
                     editors.forEach((editor) => {
                         new EasyMDE({ 
                             element: editor,
-                            toolbar: [
-                                {
-                                    name: "bold",
-                                    action: EasyMDE.toggleBold,
-                                    className: "fa fa-bold",
-                                    title: "Bold",
-                                },
-                                {
-                                    name: "italic",
-                                    action: EasyMDE.toggleItalic,
-                                    className: "fa fa-italic",
-                                    title: "Italic",
-                                },
-                            ], 
                         });
                     });
                 });
