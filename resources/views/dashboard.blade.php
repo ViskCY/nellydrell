@@ -312,11 +312,22 @@
                 document.addEventListener('DOMContentLoaded', () => {
                     const editors = document.querySelectorAll('.markdown-editor');
                     editors.forEach((editor) => {
-                        new EasyMDE({
-                            {!! config('blog.easyMDE.toolbar')
-                                ? "showIcons: ". json_encode(config('blog.easyMDE.toolbars')[config('blog.easyMDE.toolbar')])
-                                : null
-                            !!}
+                        new EasyMDE({ 
+                            element: editor,
+                            toolbar: [
+                                {
+                                    name: "bold",
+                                    action: EasyMDE.toggleBold,
+                                    className: "fa fa-bold",
+                                    title: "Bold",
+                                },
+                                {
+                                    name: "italic",
+                                    action: EasyMDE.toggleItalic,
+                                    className: "fa fa-italic",
+                                    title: "Italic",
+                                },
+                            ], 
                         });
                     });
                 });
