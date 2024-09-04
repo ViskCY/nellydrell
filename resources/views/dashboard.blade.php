@@ -5,6 +5,12 @@
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 dark:text-white">
+            <style>
+                .EasyMDEContainer .editor-toolbar .fa {
+                    color: #000000; /* Set to white for dark backgrounds */
+                }
+            </style>
+
             @if(session('success'))
             <div class="bg-green-300 overflow-hidden shadow-sm sm:rounded-lg mb-5">
                 <div class="py-3 px-4 text-green-900">
