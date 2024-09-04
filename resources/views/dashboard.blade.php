@@ -296,11 +296,11 @@
                     <form method="POST" action="{{ route('dashboard.update', $key) }}">
                         @csrf
                         <div class="mt-3">
-                            <textarea id="{{ $key }}" name="content" class="markdown-editor block mt-1 w-full" placeholder="Enter your content here" rows="10">{{ old('content', $content[$key] ?? '') }}</textarea>
+                            <textarea id="{{ $key }}" name="content" class="markdown-editor block mt-1 w-full" placeholder="Sisestage oma sisu siia" rows="10">{{ old('content', $content[$key] ?? '') }}</textarea>
                             @error('content') <span class="text-red-500">{{ $message }}</span> @enderror
                         </div>
                         <button type="submit" class="inline-flex items-center px-4 py-2 bg-gray-800 dark:bg-gray-100 border border-transparent rounded-md font-semibold text-xs text-white dark:text-black uppercase tracking-widest hover:bg-gray-700 dark:hover:bg-gray-300 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:ring ring-gray-300 disabled:opacity-25 transition ease-in-out duration-150">
-                            Update
+                            Uuenda
                         </button>
                     </form>
                 </div>
@@ -312,7 +312,14 @@
                 document.addEventListener('DOMContentLoaded', () => {
                     const editors = document.querySelectorAll('.markdown-editor');
                     editors.forEach((editor) => {
-                        new EasyMDE({ element: editor });
+                        new EasyMDE({ 
+                            element: editor,
+                            
+                            {!! config('blog.easyMDE.toolbar')
+                                ? "showIcons: ". json_encode(config('blog.easyMDE.toolbars')[config('blog.easyMDE.toolbar')])
+                                : null
+                            !!}
+                        });
                     });
                 });
             </script>
