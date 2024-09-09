@@ -6,8 +6,8 @@
                     <article class="bg-white rounded-lg shadow-md dark:bg-gray-800 dark:hover:bg-gray-700 m-4 my-5 text-center">
                         <a href="{{ route('posts.index', ['category' => $category->id]) }}">
                             <div class="relative">
-                                <span class="rounded-t-lg featured-post-image" role="img" style="background-image: url('{{ $category->background_image }}'); filter: blur(4px); -webkit-filter: blur(4px);" alt="{{ $category->name }}"></span>
-                                <span class="absolute text-3xl text-center font-bold text-gray-700 dark:text-gray-300" style="top: 50%; left: 50%; transform: translate(-50%, -50%);">{{ $category->name }}</span>
+                                <span class="rounded-t-lg featured-post-image" role="img" style="background-image: url('{{ $category->background_image }}');" alt="{{ $category->name }}"></span>
+                                <span class="absolute text-3xl text-center font-bold text-black" style="top: 50%; left: 50%; transform: translate(-50%, -50%);">{{ $category->name }}</span>
                             </div>
                         </a>
                     </article>
