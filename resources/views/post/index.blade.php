@@ -5,9 +5,6 @@
 
     <div class="relative flex items-top justify-center sm:items-center py-4 sm:pt-0">
         <section class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <header class="text-center py-5 mt-5 mb-3">
-                <img class="mx-auto dark:text-white" src="{{ asset('storage/logo.png') }}" alt="Alt">
-            </header>
 
             @if($posts->count())
 			<div class="flex flex-row flex-wrap justify-start">

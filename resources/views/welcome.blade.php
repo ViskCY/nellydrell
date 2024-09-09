@@ -16,7 +16,7 @@
                 @livewire('latest-blog-posts')
                 
                 <div class="px-4 sm:px-6">
-                    <a href="{{ route('home') }}" title="Click to publish the post" class="rounded-lg transition-opacity bg-green-400 text-green-900 px-4 py-5 text-xs uppercase font-bold text-center block">
+                    <a href="{{ route('posts.index') }}" title="Click to publish the post" class="rounded-lg transition-opacity bg-green-400 text-green-900 px-4 py-5 text-xs uppercase font-bold text-center block">
                         {{ __('messages.moreimg') }}
                     </a>
                 </div>
