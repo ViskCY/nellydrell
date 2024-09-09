@@ -38,4 +38,5 @@ return [
     'mngpic' => 'Manage image',
     'back' => 'Back',
     'more' => 'Look closer',
+    'moreimg' => 'Load more paintings'
 ];
