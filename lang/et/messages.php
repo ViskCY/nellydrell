@@ -38,5 +38,5 @@ return [
     'mngpic' => 'Halda pilti',
     'back' => 'Tagasi',
     'more' => 'Vaata lähemalt',
-    'moreimg' => 'Kuva rohkem maale'
+    'moreimg' => 'Vaata rohkem maale'
 ];
