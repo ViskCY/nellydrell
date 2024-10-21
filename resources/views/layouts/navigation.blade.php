@@ -52,20 +52,20 @@
                         </form>
 
                         <!-- Other navigation links -->
-                        <a href="{{ route('home') }}" class="block px-4 py-2 text-sm text-white hover:bg-gray-700">{{__('messages.home')}}</a>
-                        <a href="{{ route('posts.index') }}" class="block px-4 py-2 text-sm text-white hover:bg-gray-700">{{__('messages.pics')}}</a>
-                        <a href="{{ route('about') }}" class="block px-4 py-2 text-sm text-white hover:bg-gray-700">{{__('messages.about')}}</a>
-                        <a href="{{ route('cv') }}" class="block px-4 py-2 text-sm text-white hover:bg-gray-700">{{__('messages.cv')}}</a>
-                        <a href="{{ route('contacts') }}" class="block px-4 py-2 text-sm text-white hover:bg-gray-700">{{__('messages.contacts')}}</a>
+                        <a href="{{ route('home') }}" class="block px-4 py-2 text-sm text-white font-bold hover:bg-gray-700">{{__('messages.home')}}</a>
+                        <a href="{{ route('posts.index') }}" class="block px-4 py-2 text-sm text-white font-bold hover:bg-gray-700">{{__('messages.pics')}}</a>
+                        <a href="{{ route('about') }}" class="block px-4 py-2 text-sm text-white font-bold hover:bg-gray-700">{{__('messages.about')}}</a>
+                        <a href="{{ route('cv') }}" class="block px-4 py-2 text-sm text-white font-bold hover:bg-gray-700">{{__('messages.cv')}}</a>
+                        <a href="{{ route('contacts') }}" class="block px-4 py-2 text-sm text-white font-bold hover:bg-gray-700">{{__('messages.contacts')}}</a>
                         <hr>
                         @if (app()->getLocale() === 'et')
-                            <a href="https://nellydrell.com" class="block px-4 py-2 text-sm text-white hover:bg-gray-700">{{ __('English') }}</a>
+                            <a href="https://nellydrell.com" class="block px-4 py-2 text-sm text-white font-bold hover:bg-gray-700">{{ __('English') }}</a>
                         @else
-                            <a href="https://nellydrell.ee" class="block px-4 py-2 text-sm text-white hover:bg-gray-700">{{ __('Eesti keel') }}</a>
+                            <a href="https://nellydrell.ee" class="block px-4 py-2 text-sm text-white font-bold hover:bg-gray-700">{{ __('Eesti keel') }}</a>
                         @endif
                         @can('access-dashboards')
                             <hr>
-                            <a href="{{ route('dashboard') }}" class="block px-4 py-2 text-sm text-white hover:bg-gray-700">{{__('messages.dashboard')}}</a>
+                            <a href="{{ route('dashboard') }}" class="block px-4 py-2 text-sm text-white font-bold hover:bg-gray-700">{{__('messages.dashboard')}}</a>
                         @endcan
                     </div>
                 </div>
