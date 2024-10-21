@@ -1,6 +1,6 @@
 <x-app-layout>
     <x-slot name="title">
-        {{ $title ?? 'Pildid' }}
+        {{ $title ?? 'Maalid' }}
     </x-slot>
 
     <div class="relative flex items-top justify-center sm:items-center py-4 sm:pt-0">
