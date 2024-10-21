@@ -7,7 +7,7 @@
         <div class="max-w-5xl w-full mx-auto sm:px-6 lg:px-8 my-8 sm:my-16">
             <h1 class="text-3xl font-bold dark:text-white mb-8 sm:my-3 text-center sm:text-left">Uue pildi lisamine</h1>
             <section class="bg-white rounded-lg shadow-md dark:bg-gray-800 py-4 px-6 dark:text-white">
-				<form action="{{ route('posts.store') }}" method="POST" class="text-gray-900">
+                <form action="{{ route('posts.store') }}" method="POST" class="text-gray-900">
                     @csrf
 
                     <fieldset>
@@ -18,6 +18,12 @@
                             <x-label for="title" :value="__('Pealkiri*')" />
                             <x-input id="title" name="title" :value="old('title')" type="text" class="block mt-1 w-full" maxlength="255" required autofocus placeholder="Pildi pealkiri"/>
                             @error('title') <span class="text-red-500">{{ $message }}</span> @enderror
+                        </div>
+
+                        <div class="mt-3">
+                            <x-label for="title_en" :value="__('English Title*')" />
+                            <x-input id="title_en" name="title_en" :value="old('title_en')" type="text" class="block mt-1 w-full" maxlength="255" required placeholder="Image title in English"/>
+                            @error('title_en') <span class="text-red-500">{{ $message }}</span> @enderror
                         </div>
 
                         <div class="mt-3">
@@ -80,7 +86,7 @@
                         </x-button>
                     </div>
                 </form>
-			</section>
+            </section>
         </div>
     </div>
 

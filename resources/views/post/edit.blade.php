@@ -15,7 +15,7 @@
             
             <h1 class="text-3xl font-bold dark:text-white mb-8 sm:my-3 text-center sm:text-left">Pildi Muutmine</h1>
             <section class="bg-white rounded-lg shadow-md dark:bg-gray-800 py-4 px-6 dark:text-white">
-				<form action="{{ route('posts.update', $post) }}" method="POST" class="text-gray-900">
+                <form action="{{ route('posts.update', $post) }}" method="POST" class="text-gray-900">
                     @method('PATCH')
                     @csrf
                     <fieldset>
@@ -28,6 +28,14 @@
                             </x-label>
                             <x-input id="title" name="title" :value="old('title') ?? $post->title" type="text" class="block mt-1 w-full" maxlength="255" required autofocus placeholder="The post title"/>
                             @error('title') <span class="text-red-500">{{ $message }}</span> @enderror
+                        </div>
+
+                        <div class="mt-3">
+                            <x-label for="title_en">
+                                {{ __('English Title*') }} <small>(Märge: Slug ei muutu)</small>
+                            </x-label>
+                            <x-input id="title_en" name="title_en" :value="old('title_en') ?? $post->title_en" type="text" class="block mt-1 w-full" maxlength="255" required placeholder="The post title in English"/>
+                            @error('title_en') <span class="text-red-500">{{ $message }}</span> @enderror
                         </div>
 
                         <div class="mt-3">
@@ -91,7 +99,7 @@
                         </x-button>
                     </div>
                 </form>
-			</section>
+            </section>
         </div>
     </div>
 

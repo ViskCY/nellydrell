@@ -96,20 +96,21 @@ class PostController extends Controller
      */
     public function create(Request $request)
     {
-        $this->authorize('create', App\Models\Post::class);
-
+        $this->authorize('create', Post::class);
+    
         if (config('blog.easyMDE.enabled')) {
             if (!$request->has('draft_id')) {
                 return redirect(route('posts.create', ['draft_id' => time()]));
-            };
-    
+            }
+            
             return view('post.create', [
                 'draft_id' => $request->get('draft_id'),
             ]);
         }
-
+    
         return view('post.create');
     }
+    
 
     /**
      * Store a new blog post.
@@ -165,23 +166,24 @@ class PostController extends Controller
     public function edit(Request $request, Post $post)
     {
         $this->authorize('update', $post);
-        
+    
         if (config('blog.easyMDE.enabled')) {
             if (!$request->has('draft_id')) {
                 return redirect(route('posts.edit', [
                     'post' => $post,
                     'draft_id' => time(),
                 ]));
-            };
-    
+            }
+            
             return view('post.edit', [
                 'post' => $post,
                 'draft_id' => $request->get('draft_id'),
             ]);
         }
-
+    
         return view('post.edit', ['post' => $post]);
     }
+    
 
     /**
      * Update the specified resource in storage.
