@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Post;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
 use App\Http\Requests\StorePostRequest;
 use App\Http\Requests\UpdatePostRequest;
 use App\Http\Controllers\MarkdownConverter;
@@ -26,13 +27,16 @@ class PostController extends Controller
      */
     public function index(Request $request)
     {
+        $locale = App::getLocale();
         $query = $request->get('query');
         
         if ($request->has('category')) {
             return view('post.index', [
-                'title' => 'Posts with '. __('blog.tag') .' ' . $request->get('category'),
-                'filter' => 'Filtered by '. __('blog.tag') .' "' . $request->get('category') . '"',
-                'posts' => Post::whereJsonContains('tags', $request->get('category'))->get(),
+                'title' => 'Posts with ' . __('blog.tag') . ' ' . $request->get('category'),
+                'filter' => 'Filtered by ' . __('blog.tag') . ' "' . $request->get('category') . '"',
+                'posts' => Post::whereJsonContains('tags', $request->get('category'))->get()->map(function($post) use ($locale) {
+                    return $this->translatePostTitle($post, $locale); // Adjust post title based on locale
+                }),
             ]);
         }
 
@@ -42,13 +46,17 @@ class PostController extends Controller
             return view('post.index', [
                 'title' => 'Posts by ' . $author->name,
                 'filter' => 'Filtered by author ' . $author->name,
-                'posts' => $author->postsssss,
+                'posts' => $author->posts->map(function($post) use ($locale) {
+                    return $this->translatePostTitle($post, $locale); // Adjust post title based on locale
+                }),
             ]);
         }
 
         if ($query) {
-            $posts = Post::where('title', 'like', "%{$query}%")->get();
-    
+            $posts = Post::where('title', 'like', "%{$query}%")->get()->map(function($post) use ($locale) {
+                return $this->translatePostTitle($post, $locale); // Adjust post title based on locale
+            });
+
             return view('post.index', [
                 'title' => 'Search results for ' . $query,
                 'filter' => 'Filtered by search query "' . $query . '"',
@@ -57,9 +65,27 @@ class PostController extends Controller
         }
 
         return view('post.index', [
-            'posts' => Post::all(),
+            'posts' => Post::all()->map(function($post) use ($locale) {
+                return $this->translatePostTitle($post, $locale); // Adjust post title based on locale
+            }),
         ]);
         
+    }
+
+    /**
+     * Translate post title based on the current locale.
+     *
+     * @param \App\Models\Post $post
+     * @param string $locale
+     * @return \App\Models\Post
+     */
+    protected function translatePostTitle(Post $post, $locale)
+    {
+        if ($locale === 'en' && $post->title_en) {
+            $post->title = $post->title_en; // Use the English title if locale is 'en'
+        }
+        // Otherwise, keep the default title (in the default locale)
+        return $post;
     }
 
     /**
@@ -117,13 +143,11 @@ class PostController extends Controller
     {
         $this->authorize('view', $post);
 
-        // Check if $post->body is not null
-        if ($post->body !== null) {
-            // Generate formatted HTML from markdown
-            $markdown = (new MarkdownConverter($post->body))->toHtml();
-        } else {
-            $markdown = '';
-        }
+        $locale = App::getLocale(); // Get the current locale
+        $post = $this->translatePostTitle($post, $locale); // Adjust post title based on locale
+
+        // Check if $post->body is not null and convert markdown to HTML
+        $markdown = $post->body ? (new MarkdownConverter($post->body))->toHtml() : '';
 
         return view('post.show', [
             'post' => $post,

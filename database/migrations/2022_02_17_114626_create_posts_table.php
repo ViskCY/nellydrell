@@ -19,6 +19,7 @@ return new class extends Migration
             $table->foreignIdFor(User::class); // The Authoring User
 
             $table->string('title', 255);
+            $table->string('title_en', 255);
 
             $table->string('slug', 255)
                 ->unique(); // Make the slug an index
