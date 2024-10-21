@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::table('categories', function (Blueprint $table) {
             $table->string('name');
+            $table->string('name_en');
             $table->text('description')->nullable();
         });
     }
@@ -24,6 +25,7 @@ return new class extends Migration
     {
         Schema::table('categories', function (Blueprint $table) {
             $table->dropColumn('name');
+            $table->dropColumn('name_en');
             $table->dropColumn('description');
         });
     }
