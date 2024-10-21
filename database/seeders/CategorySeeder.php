@@ -21,6 +21,8 @@ class CategorySeeder extends Seeder
             ['id' => 3, 'name' => 'Loodusmaalid', 'name_en' => 'Nature paintings'],
             ['id' => 4, 'name' => 'Linna vaated', 'name_en' => 'City views'],
             ['id' => 5, 'name' => 'Abstrakt maalid', 'name_en' => 'Abstract paintings'],
+            ['id' => 6, 'name' => 'Joonistused', 'name_en' => 'Drawings'],
+            ['id' => 7, 'name' => 'Matüürmort', 'name_en' => 'Mortuary mortuary'],
         ];
 
         foreach ($categories as $category) {
