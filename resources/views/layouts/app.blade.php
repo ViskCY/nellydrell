@@ -47,7 +47,7 @@
 
     </head>
     <body class="font-sans antialiased">
-        <div class="min-h-screen flex flex-col" style="background-color: #2B1608;">
+        <div class="min-h-screen flex flex-col" style="background-color: #000000;">
             @include('layouts.navigation')
 
             <!-- Page Content -->

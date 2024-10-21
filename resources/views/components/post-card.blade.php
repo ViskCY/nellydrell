@@ -1,4 +1,4 @@
-<article class="w-full sm:w-80 bg-white rounded-lg shadow-md m-4 my-3 flex flex-col flex-grow" style="background-color: #000000;>
+<article class="w-full sm:w-80 bg-white rounded-lg shadow-md m-4 my-3 flex flex-col flex-grow border" style="background-color: #000000;>
     <header>
         <a href="{{ route('posts.show', $post) }}">
             <span class="rounded-t-lg featured-post-image" role="img" style="background-image: url('{{ $post->featured_image }}');" alt="Featured Image"></span>
